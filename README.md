@@ -23,15 +23,20 @@ $ npm run start:dev
 $ npm run start:prod
 ```
 
-## Test
-
-```bash
-# unit tests
-$ npm run test
-
-# e2e tests
-$ npm run test:e2e
-
-# test coverage
-$ npm run test:cov
+## API Note
+1. REST API Terproteksi oleh JWT Token untuk mendapatkan tokennya bisa melakukan call API:
 ```
+curl -H 'Content-Type: application/json' \
+      -d '{ "name":"nama user"}' \
+      -X POST \
+      http://127.0.0.1/auth/login
+```
+
+2. Response dari url akan seperti ini :
+```
+{
+  "access_token": "access token"
+}
+```
+
+3. Jadikan access token sebagai bearer token.
